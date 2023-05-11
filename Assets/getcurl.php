@@ -15,7 +15,7 @@ $response = curl_exec($curl);
 curl_close($curl);
 $response_array = json_decode($response, true);
 
-$onscreen = '<table class="table" width="100%">
+$onscreen = '<table class="table table-striped" width="100%">
                   <thead>
                     <th>Kode Barang</th>
                     <th>Nama Barang</th>

@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <?php 
-        require_once('./Assets/config.php');
-        require_once('./Assets/header1.php');
+        require_once('./assets/config.php');
+        require_once('./assets/header1.php');
     ?>
 </head>
 <body>
     <div class="container">
-        <div class="jdlaccr" style="font-size: 36px; color: brown;"> Harber Web </div>
+        <div class="jdlaccr" style="font-size: 36px; color: brown;"> Harber Web - UTS Semester 2 - 22090036</div>
         <div class="card shadow-sm mb-5 bg-black rounded">
             <div class="card-body">
                 <h5 class="card-title">Input Name:</h5>
@@ -22,6 +22,6 @@
         </div>
         <div id="infoinvaccr"></div>
     </div>
-    <script src="./Assets/harberweb.js"></script>
+    <script src="./assets/harberweb.js"></script>
 </body>
 </html>
