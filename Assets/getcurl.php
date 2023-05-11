@@ -19,31 +19,29 @@ $onscreen = '<table class="table" width="100%">
                   <thead>
                     <th>Kode Barang</th>
                     <th>Nama Barang</th>
-                    <th>Code</th>
-                    <th>BARCODE</th>
                     <th>Harga Jual</th>
-                    <th>QUANTITY</th>
-                    <th>COGS</th>
+                    <th>Quantity</th>
                   </thead>
                 ';
 foreach ($response_array as $resp) {
-   $onscreen .='<tr>
+   // menampilkan semua data inventory yang memiliki huruf berawalan 
+   if(substr($resp['i_code'], 0, 1) === 'L' || substr($resp['i_name'], 0, 1) === 'L' ) {
+    $onscreen .='<tr>
                   <td>' . $resp['i_code'] . '</td>
                   <td>' . $resp['i_name'] . '</td>
-                  <td>' . $resp['g_code'] . '</td>
-                  <td>' . $resp['i_barcode'] .' </td>
-                  <td>' . rupiah($resp['i_sell']) . '</td>
+                  <td>' . setToRupiahCurrency($resp['i_sell']) . '</td>
                   <td>' . $resp['i_qty'] . '</td>
-                  <td>' . rupiah($resp['i_cogs']) . '</td>
                 </tr>';
+   }
+   
 }
 
 $onscreen.='</table>';
 echo $onscreen;
 
-function rupiah($angka){
-	
-	$hasil_rupiah = "Rp " . number_format($angka,2,',','.');
-	return $hasil_rupiah;
+// mengubah penulisan angka menjadi format rupiah
+function setToRupiahCurrency($angka){
+	$result = "Rp " . number_format($angka,2,',','.');
+	return $result;
  
 }
